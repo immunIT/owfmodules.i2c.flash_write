@@ -14,8 +14,6 @@ class FlashWrite(AModule):
             'author': 'Jordan Ovrè <ghecko78@gmail.com> / Paul Duncan <eresse@dooba.io>'
         })
         self.options = [
-            {"Name": "detect_octowire", "Value": "", "Required": True, "Type": "bool",
-             "Description": "Detect and connect octowire hardware", "Default": True},
             {"Name": "i2c_bus", "Value": "", "Required": True, "Type": "int",
              "Description": "The octowire I2C device (0=I2C0 or 1=I2C1)", "Default": 0},
             {"Name": "slave_address", "Value": "", "Required": True, "Type": "hex",
@@ -65,8 +63,9 @@ class FlashWrite(AModule):
 
     def run(self):
         """
-        Our code here
-        :return:
+        Main function.
+        Write a firmware into an I2C flash.
+        :return: Nothing
         """
         # Detect and connect to the octowire hardware. Set the self.owf_serial variable if found.
         self.connect()
