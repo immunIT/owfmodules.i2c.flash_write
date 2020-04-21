@@ -37,7 +37,7 @@ class FlashWrite(AModule):
         ]
         self.advanced_options.append(
             {"Name": "chunk_size", "Value": "", "Required": True, "Type": "hex",
-             "Description": "Flash chunk size", "Default": 0x80},
+             "Description": "Flash chunk size", "Default": 0x80}
         )
 
     def writing_process(self):
