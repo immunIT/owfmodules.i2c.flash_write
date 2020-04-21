@@ -35,10 +35,10 @@ class FlashWrite(AModule):
             {"Name": "i2c_baudrate", "Value": "", "Required": True, "Type": "int",
              "Description": "set I2C baudrate in Hz (supported value: 100000 or 400000)", "Default": 400000},
         ]
-        self.advanced_options.append(
+        self.advanced_options.append([
             {"Name": "chunk_size", "Value": "", "Required": True, "Type": "hex",
-             "Description": "Flash chunk size", "Default": 0x80},
-        )
+             "Description": "Flash chunk size", "Default": 0x80}
+        ])
 
     def writing_process(self):
         bus_id = self.get_option_value("i2c_bus")
