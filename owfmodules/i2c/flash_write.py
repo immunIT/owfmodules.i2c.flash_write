@@ -17,28 +17,29 @@ class FlashWrite(AModule):
         super(FlashWrite, self).__init__(owf_config)
         self.meta.update({
             'name': 'I2C write flash',
-            'version': '1.0.1',
+            'version': '1.0.0',
             'description': 'Write into I2C flash memory',
             'author': 'Jordan Ovrè <ghecko78@gmail.com> / Paul Duncan <eresse@dooba.io>'
         })
-        self.options = [
-            {"Name": "i2c_bus", "Value": "", "Required": True, "Type": "int",
-             "Description": "The octowire I2C device (0=I2C0 or 1=I2C1)", "Default": 0},
-            {"Name": "slave_address", "Value": "", "Required": True, "Type": "hex",
-             "Description": "The I2C target chip address", "Default": ""},
-            {"Name": "int_addr_length", "Value": "", "Required": True, "Type": "int",
-             "Description": "The internal chip address length (byte)", "Default": 2},
-            {"Name": "firmware", "Value": "", "Required": True, "Type": "file_r",
-             "Description": "The firmware to write to the I2C flash memory", "Default": ""},
-            {"Name": "start_chunk", "Value": "", "Required": True, "Type": "hex",
-             "Description": "The starting chunk address (1 chunk = 128 bytes)", "Default": 0x0000},
-            {"Name": "i2c_baudrate", "Value": "", "Required": True, "Type": "int",
-             "Description": "set I2C baudrate in Hz (supported value: 100000 or 400000)", "Default": 400000},
-        ]
-        self.advanced_options.append(
-            {"Name": "chunk_size", "Value": "", "Required": True, "Type": "hex",
-             "Description": "Flash chunk size", "Default": 0x80}
-        )
+        self.options = {
+            "i2c_bus": {"Value": "", "Required": True, "Type": "int",
+                        "Description": "The octowire I2C device (0=I2C0 or 1=I2C1)", "Default": 0},
+            "slave_address": {"Value": "", "Required": True, "Type": "hex",
+                              "Description": "The I2C target chip address", "Default": ""},
+            "int_addr_length": {"Value": "", "Required": True, "Type": "int",
+                                "Description": "The internal chip address length (byte)", "Default": 2},
+            "firmware": {"Value": "", "Required": True, "Type": "file_r",
+                         "Description": "The firmware to write to the I2C flash memory", "Default": ""},
+            "start_chunk": {"Value": "", "Required": True, "Type": "hex",
+                            "Description": "The starting chunk address (1 chunk = 128 bytes)", "Default": 0x0000},
+            "i2c_baudrate": {"Value": "", "Required": True, "Type": "int",
+                             "Description": "set I2C baudrate in Hz (supported value: 100000 or 400000)",
+                             "Default": 400000},
+        }
+        self.advanced_options.append({
+            "chunk_size": {"Value": "", "Required": True, "Type": "hex",
+                           "Description": "Flash chunk size", "Default": 0x80}
+        })
 
     def writing_process(self):
         bus_id = self.get_option_value("i2c_bus")
