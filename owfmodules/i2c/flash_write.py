@@ -42,13 +42,13 @@ class FlashWrite(AModule):
         })
 
     def writing_process(self):
-        bus_id = self.get_option_value("i2c_bus")
-        i2c_baudrate = self.get_option_value("i2c_baudrate")
-        firmware = self.get_option_value("firmware")
-        current_chunk_addr = self.get_option_value("start_chunk")
-        chunk_size = self.get_advanced_option_value("chunk_size")
-        slave_addr = self.get_option_value("slave_address")
-        int_addr_length = self.get_option_value("int_addr_length")
+        bus_id = self.options["i2c_bus"]["Value"]
+        i2c_baudrate = self.options["i2c_baudrate"]["Value"]
+        firmware = self.options["firmware"]["Value"]
+        current_chunk_addr = self.options["start_chunk"]["Value"]
+        chunk_size = self.advanced_options["chunk_size"]["Value"]
+        slave_addr = self.options["slave_address"]["Value"]
+        int_addr_length = self.options["int_addr_length"]["Value"]
 
         # Get the size width of the terminal for dynamic printing
         t_width, _ = shutil.get_terminal_size()
