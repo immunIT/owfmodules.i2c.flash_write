@@ -36,7 +36,7 @@ class FlashWrite(AModule):
                              "Description": "set I2C baudrate in Hz (supported value: 100000 or 400000)",
                              "Default": 400000},
         }
-        self.advanced_options.append({
+        self.advanced_options.update({
             "chunk_size": {"Value": "", "Required": True, "Type": "hex",
                            "Description": "Flash chunk size", "Default": 0x80}
         })
