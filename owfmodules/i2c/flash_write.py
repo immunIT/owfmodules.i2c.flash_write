@@ -59,7 +59,10 @@ class FlashWrite(AModule):
 
         # Writing data to the I2C flash
         with open(firmware, "rb") as f:
-            while data := f.read(chunk_size):
+            while True:
+                data = f.read(chunk_size)
+                if not data:
+                    break
                 print(" " * t_width, end="\r", flush=True)
                 print("[*] Writing to address: {}".format(hex(current_chunk_addr)), end="\r", flush=True)
                 # Write to the I2C chip
