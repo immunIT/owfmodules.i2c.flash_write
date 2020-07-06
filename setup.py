@@ -10,7 +10,7 @@ __license__ = "Apache 2.0"
 __version__ = "1.0.0"
 __contact__ = "Jordan Ovrè / Ghecko <jovre@immunit.ch>, Paul Duncan / Eresse <pduncan@immunit.ch>"
 
-description = 'An I2C module to write to an I2C flash memory'
+description = 'Program generic I2C flash memories'
 name = 'owfmodules.i2c.flash_write'
 
 setup(

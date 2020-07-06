@@ -1,7 +1,7 @@
 # owfmodules.i2c.flash_write
 
-Write into an I2C flash chip.
+Program generic I2C flash memories.
 
-**Tested on the following chip:**
+**Tested on the following chips:**
 
-* AT24C family chip
+* AT24C family chips
