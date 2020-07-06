@@ -33,7 +33,7 @@ class FlashWrite(AModule):
             "start_chunk": {"Value": "", "Required": True, "Type": "hex",
                             "Description": "Starting chunk address (1 chunk = 128 bytes)", "Default": 0x0000},
             "i2c_baudrate": {"Value": "", "Required": True, "Type": "int",
-                             "Description": "I2C frequency in Hz (supported value: 100000 or 400000)",
+                             "Description": "I2C frequency in Hz (supported values: 100000 or 400000)",
                              "Default": 400000},
         }
         self.advanced_options.update({
