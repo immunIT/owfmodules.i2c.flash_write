@@ -67,7 +67,6 @@ class FlashWrite(AModule):
                 i2c_interface.transmit(data=data, i2c_addr=slave_addr, int_addr=current_chunk_addr,
                                        int_addr_length=int_addr_length)
                 current_chunk_addr += chunk_size
-            # Empty printing to avoid ugly output
             self.logger.handle("Done!", self.logger.SUCCESS)
 
     def run(self):
