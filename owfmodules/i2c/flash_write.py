@@ -27,7 +27,7 @@ class FlashWrite(AModule):
             "slave_address": {"Value": "", "Required": True, "Type": "hex",
                               "Description": "I2C target chip address", "Default": ""},
             "int_addr_length": {"Value": "", "Required": True, "Type": "int",
-                                "Description": "Target chip internal address length (byte)", "Default": 2},
+                                "Description": "Target chip internal address length (bytes)", "Default": 2},
             "firmware": {"Value": "", "Required": True, "Type": "file_r",
                          "Description": "Firmware to write into the I2C flash memory", "Default": ""},
             "start_chunk": {"Value": "", "Required": True, "Type": "hex",
